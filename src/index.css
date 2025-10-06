@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+
+@layer components {
+  .nav-btn {
+    @apply mx-1.5 btn btn-soft btn-secondary   }
+
+  /* .card {
+    @apply bg-white shadow-lg p-6 rounded-2xl;
+  } */
+}
