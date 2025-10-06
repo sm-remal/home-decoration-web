@@ -11,17 +11,17 @@ const Products = () => {
     const searchProduct = productData ? furnitureData.filter(product => product.name.toLowerCase().includes(productData)) : furnitureData;
 
 
-    console.log(searchProduct)
+    // console.log(searchProduct)
 
 
 
     return (
-        <div className='my-6'>
+        <div className='my-10'>
             <div className='flex justify-between items-center'>
                 <div className='flex items-center gap-2 px-4 md:px-2'><span className='text-lg md:text-xl lg:text-2xl font-semibold'> All Products</span> <small className='text-gray-500 font-semibold hidden md:flex'>(Our Available Products: {searchProduct.length})</small>
                 </div>
 
-                <label onChange={(e) => setSearch(e.target.value)} className="input">
+                <label className="input w-[180px] md:w-[240px] md:mr-1 mr-4">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                             strokeLinejoin="round"
@@ -34,7 +34,7 @@ const Products = () => {
                             <path d="m21 21-4.3-4.3"></path>
                         </g>
                     </svg>
-                    <input type="search" required placeholder="Search" />
+                    <input value={search} onChange={(e) => setSearch(e.target.value)} type="search" required placeholder="Search" />
                 </label>
 
 
