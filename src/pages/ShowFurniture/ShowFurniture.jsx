@@ -1,9 +1,10 @@
 import React from 'react';
 import { TbCurrencyTaka } from 'react-icons/tb';
+import { Link } from 'react-router';
 
 const ShowFurniture = ({ furniture }) => {
-    console.log(furniture)
-    const { name, category, image, price, description } = furniture;
+    
+    const {id, name, category, image, price, description } = furniture;
     return (
         <div className="card bg-base-100 shadow-sm border-1 border-gray-50 mx-4 md:mx-0">
             <figure className='overflow-hidden rounded-lg relative group'>
@@ -19,9 +20,12 @@ const ShowFurniture = ({ furniture }) => {
                 <p className='text-gray-600'>{description}</p>
                 <div className="card-actions flex justify-between mt-4">
                     <div className="badge badge-outline">Products</div>
-                    <div className='flex items-center text-[18px] font-bold text-gray-600'><span className='text-2xl'><TbCurrencyTaka/></span><span>{price}</span></div>
+                    <div className='flex items-center text-[18px] font-bold text-gray-600'><span className='text-2xl'><TbCurrencyTaka /></span><span>{price}</span></div>
                 </div>
-                <button className='btn btn-secondary mt-4'>Add To Cart</button>
+                <div className='flex gap-2'>
+                    <Link className='btn btn-secondary mt-4 flex-1'>WishList</Link>
+                    <Link to={`/products/${id}`} className='btn btn-secondary mt-4 flex-1'>Details</Link>
+                </div>
             </div>
         </div>
     );

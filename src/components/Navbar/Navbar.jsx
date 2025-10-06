@@ -29,8 +29,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-2">
+                <NavLink className="nav-btn" to="/contact">WishList</NavLink>
                 <a className="btn btn-secondary">Login</a>
-                <a className="btn btn-secondary">Sign Up</a>
+                <a className="btn btn-secondary hidden md:flex">Sign Up</a>
             </div>
         </div>
     );

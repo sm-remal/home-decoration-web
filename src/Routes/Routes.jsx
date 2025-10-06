@@ -7,6 +7,8 @@ import About from '../pages/About/About';
 import Products from '../pages/Products/Products';
 import Contact from '../pages/Contact/Contact';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import WishList from '../pages/WishList/WishList';
+import ProductsDetails from '../pages/ProductsDetails/ProductsDetails';
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +26,11 @@ export const router = createBrowserRouter([
             loader: () => fetch('furnitureData.json'),
             Component: Products,
         },
+        { 
+            path: "products/:id",
+            loader: () => fetch(`furnitureData.json`),
+            Component: ProductsDetails,
+        },
         {
             path: "about",
             Component: About,
@@ -31,6 +38,10 @@ export const router = createBrowserRouter([
         {
             path: "contact",
             Component: Contact,
+        },
+        {
+            path: "wishlist",
+            Component: WishList,
         }
     ]
   },
