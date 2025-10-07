@@ -35,10 +35,10 @@ const WishList = () => {
                 </h2>
 
                 <div className="dropdown dropdown-left dropdown-center">
-                    <div tabIndex={0} role="button" className="btn m-1">Sort</div>
+                    <div tabIndex={0} role="button" className="m-1 btn btn-secondary btn-sm">Sort</div>
                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                        <li><button onClick={() => setSortOrder('price-asc')}>Price Ascending</button></li>
-                        <li><button onClick={() => setSortOrder('price-dsc')}>Price Descending</button></li>
+                        <li><button onClick={() => setSortOrder('price-asc')} className='text-pink-600'>Price Ascending</button></li>
+                        <li><button onClick={() => setSortOrder('price-dsc')} className='text-pink-600'>Price Descending</button></li>
                     </ul>
                 </div>
             </div>
