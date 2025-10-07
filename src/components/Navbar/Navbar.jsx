@@ -18,7 +18,7 @@ const Navbar = () => {
                         <NavLink className="nav-btn" to="/contact">Contact</NavLink>
                     </ul>
                 </div>
-                <Link className="text-xl md:text-2xl lg:text-3xl font-semibold" to = "/">Home Decor</Link>
+                <Link className="text-xl md:text-2xl lg:text-3xl font-semibold text-pink-500" to="/">Home Decor</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

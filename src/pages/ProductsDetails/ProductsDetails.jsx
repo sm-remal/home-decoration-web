@@ -1,14 +1,16 @@
-import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import React, { use } from 'react';
+import { Link, useParams } from 'react-router';
 import { TbCurrencyTaka } from 'react-icons/tb';
 
-const ProductsDetails = () => {
-    const {id} = useParams();
+const ProductsDetails = ({ fetchPromise }) => {
+    const { id } = useParams();
     const productId = parseInt(id)
-    const productDetails = useLoaderData();
+
+    const productDetails = use(fetchPromise)
+
     const product = productDetails.find(product => product.id === productId)
-    const {name, category, description, dimensions, image, material, price} = product;
-    
+    const { name, category, description, dimensions, image, material, price } = product;
+
     return (
         <div className='flex flex-col md:flex-row justify-center items-center mx-4 md:mx-0 my-8 md:my-12'>
             <div className='flex-1 flex justify-center'>
@@ -24,6 +26,7 @@ const ProductsDetails = () => {
                     <h3 className='text-gray-600'><span className='font-semibold'>Material:</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {material}</h3>
                     <h3 className='text-gray-600'><span className='font-semibold'>Dimensions:</span> &nbsp; &nbsp; {dimensions}</h3>
                     <h3 className='text-gray-600 flex'><span className='font-semibold'>Price:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span className='text-xl'><TbCurrencyTaka /></span>{price}</h3>
+                    <Link to="/products"><button className='btn btn-secondary mt-3'>Go Back</button></Link>
                 </div>
             </div>
         </div>

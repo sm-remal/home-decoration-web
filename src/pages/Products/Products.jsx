@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
-import { useLoaderData } from 'react-router';
+import React, { use, useState } from 'react';
 import ShowFurniture from '../ShowFurniture/ShowFurniture';
 
-const Products = () => {
-    const furnitureData = useLoaderData();
+const Products = ({ fetchPromise }) => {
+    const furnitureData = use(fetchPromise)
 
     const [search, setSearch] = useState('');
 
     const productData = search.trim().toLowerCase();
     const searchProduct = productData ? furnitureData.filter(product => product.name.toLowerCase().includes(productData)) : furnitureData;
-
-
-    // console.log(searchProduct)
-
-
 
     return (
         <div className='my-10'>
@@ -36,8 +30,6 @@ const Products = () => {
                     </svg>
                     <input value={search} onChange={(e) => setSearch(e.target.value)} type="search" required placeholder="Search" />
                 </label>
-
-
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4'>
                 {

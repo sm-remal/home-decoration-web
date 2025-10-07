@@ -7,7 +7,6 @@ import withReactContent from 'sweetalert2-react-content'
 const MySwal = withReactContent(Swal)
 
 
-
 const ShowFurniture = ({ furniture }) => {
 
     const { id, name, category, image, price, description } = furniture;
@@ -38,8 +37,6 @@ const ShowFurniture = ({ furniture }) => {
         }
         localStorage.setItem('wishlist', JSON.stringify(updateList));
     }
-
-
 
     //----------------------
 
